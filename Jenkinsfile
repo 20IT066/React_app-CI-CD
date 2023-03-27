@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment{
-        IMAGE_NAME= 'pm310/react_sgp-app:1.4'
+        IMAGE_NAME= 'pm310/react_sgp-app:1.5'
     }
 
     stages {
