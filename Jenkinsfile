@@ -23,7 +23,7 @@ pipeline {
         stage("build image") {
             steps {
                 script {
-                    echo "building the docker image and push to docker hub..."
+                    echo "building the docker image and push to docker hub repositroy..."
                     //gv.buildImage()
                     withCredentials([usernamePassword(credentialsId: 'docker-hub-pm310', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]){
                         sh 'docker build -t ${IMAGE_NAME} .'
