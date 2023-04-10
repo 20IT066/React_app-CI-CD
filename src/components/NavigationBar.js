@@ -11,7 +11,11 @@ export default function NavigationBar() {
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Link to="/" className='navbar-brand'>Student Management System by 20IT062-66 For 6th-SGP Demo</Link>
+
+        <Link to="/" className='navbar-brand'>Student Management System</Link>
+
+        <Link to="/" className='navbar-brand'>Student Management System</Link>
+
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
