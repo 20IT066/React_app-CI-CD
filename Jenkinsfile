@@ -33,23 +33,22 @@ pipeline {
                 }
             }
         }
-//         stage("Deploy Application") {
-//             steps {
-//                 script {
-//                     echo "deploying the spring application on ec2"
-//                     //gv.deployApp()
-//                     def dockerStop="docker stop ec2-react"
-//                     def dockerDelete="docker rm ec2-react"
-//                     def dockerCreate="docker run -p 3000:3000 --name ec2-react ${IMAGE_NAME}"
-//
-//                     sshagent(['ec2-ubuntu-key']) {
-//                         sh "ssh -o StrictHostKeyChecking=no ec2-user@54.178.51.158  ${dockerStop}"
-//                         sh "ssh -o StrictHostKeyChecking=no ec2-user@54.178.51.158  ${dockerDelete}"
-//                         sh "ssh -o StrictHostKeyChecking=no ec2-user@54.178.51.158  ${dockerCreate}"
-//
-//                     }
-//                 }
-//             }
-//         }
+        stage("Deploy Application") {
+            steps {
+                script {
+                    echo "deploying the spring application on ec2"
+                    //gv.deployApp()
+                    def dockerStop="docker stop ec2-react"
+                    def dockerDelete="docker rm ec2-react"
+                    def dockerCreate="docker run -p 3000:3000 --name ec2-react ${IMAGE_NAME}"
+
+                    sshagent(['ec2-ubuntu-key']) {
+
+                        sh "ssh -o StrictHostKeyChecking=no ec2-user@13.231.74.254  ${dockerCreate}"
+
+                    }
+                }
+            }
+        }
     }
 }
